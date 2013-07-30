@@ -1,20 +1,27 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 
-group :production do
-  gem 'pg', '0.12.2'
-end
 
-gem 'mysql2'
+platform :ruby do
+  gem 'pg'
+  gem 'sqlite3'
+  gem 'mysql2'
+  gem 'unicorn'
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
-group :development do
-  gem 'sqlite3'
+platforms :jruby do
+ gem 'activerecord-jdbc-adapter'
+  gem 'activerecord-jdbcpostgresql-adapter'
+  gem 'jruby-openssl'
+  gem 'jdbc-mysql', :require => false
+  gem 'jdbc-sqlite3', :require => false
+  gem 'jdbc-postgres', :require => false
+  gem 'trinidad'
+  gem 'thor' 
 end
-
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '4.0.0'
