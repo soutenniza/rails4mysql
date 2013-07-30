@@ -5,7 +5,7 @@ group :production do
   gem 'pg', '0.12.2'
 end
 
-
+gem 'mysql2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
